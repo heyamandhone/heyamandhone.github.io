@@ -1,1 +1,1172 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aman Dhonne | Senior PHP Laravel Developer</title>
+<meta name="description"
+      content="Aman Dhonne is a Senior PHP Laravel Developer with 8+ years of experience building scalable backend systems, APIs, SaaS platforms and business applications.">
+<meta name="author" content="Aman Dhonne">
+<style>
+    :root {
+        --bg: #0b0f14;
+        --bg-soft: #111820;
+        --card: #131c26;
+        --border: #24303d;
+        --text: #e8edf3;
+        --muted: #9aa8b7;
+        --green: #42d392;
+        --green-dark: #1fa968;
+        --purple: #9b8cff;
+        --white: #ffffff;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        font-family:
+            Inter,
+            ui-sans-serif,
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+        background:
+            radial-gradient(
+                circle at top right,
+                rgba(66, 211, 146, 0.08),
+                transparent 30%
+            ),
+            var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+    }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+    .container {
+        width: min(1120px, 92%);
+        margin: auto;
+    }
+    /* NAVIGATION */
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(14px);
+        background: rgba(11, 15, 20, 0.82);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .nav-inner {
+        min-height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo {
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+    }
+      .logo span {
+        color: var(--green);
+    }
+    .nav-links {
+        display: flex;
+        gap: 26px;
+        color: var(--muted);
+        font-size: 14px;
+    }
+    .nav-links a {
+        transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+        color: var(--green);
+    }
+    /* HERO */
+    .hero {
+        min-height: calc(100vh - 72px);
+        display: flex;
+        align-items: center;
+        padding: 100px 0;
+    }
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 70px;
+        align-items: center;
+    }
+    .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--green);
+        background: rgba(66, 211, 146, 0.08);
+        border: 1px solid rgba(66, 211, 146, 0.2);
+        padding: 7px 12px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 24px;
+    }
+    .eyebrow-dot {
+        width: 7px;
+        height: 7px;
+        background: var(--green);
+        border-radius: 50%;
+        box-shadow: 0 0 12px var(--green);
+    }
+    h1 {
+        font-size: clamp(44px, 7vw, 76px);
+        line-height: 1.02;
+        letter-spacing: -3px;
+        margin-bottom: 24px;
+    }
+    h1 span {
+        color: var(--green);
+    }
+    .hero-title {
+        font-size: clamp(20px, 3vw, 30px);
+        font-weight: 600;
+        color: #cbd5df;
+        margin-bottom: 20px;
+    }
+    .hero-description {
+        max-width: 680px;
+        color: var(--muted);
+        font-size: 18px;
+        margin-bottom: 32px;
+    }
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 19px;
+        border-radius: 9px;
+        font-size: 14px;
+        font-weight: 700;
+        border: 1px solid var(--border);
+        transition:
+            transform 0.2s ease,
+            border-color 0.2s ease,
+            background 0.2s ease;
+    }
+    .btn:hover {
+        transform: translateY(-2px);
+        border-color: var(--green);
+    }
+    .btn-primary {
+        color: #06130d;
+        background: var(--green);
+        border-color: var(--green);
+    }
+    .btn-secondary {
+        background: var(--bg-soft);
+        color: var(--text);
+    }
+    /* CODE CARD */
+    .terminal {
+        background: #0d131a;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+    }
+    .terminal-top {
+        display: flex;
+        gap: 7px;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border);
+    }
+    .terminal-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+    .red {
+        background: #ff5f57;
+    }
+    .yellow {
+        background: #febc2e;
+    }
+    .green {
+        background: #28c840;
+    }
+    .terminal-code {
+        padding: 24px;
+        color: #aebccc;
+        font-family: "SFMono-Regular", Consolas, monospace;
+        font-size: 13px;
+        line-height: 2;
+    }
+    .keyword {
+        color: #ff7ab2;
+    }
+    .property {
+        color: #79c0ff;
+    }
+    .string {
+        color: #a5d6ff;
+    }
+    .comment {
+        color: #6e7781;
+    }
+    /* SECTIONS */
+    section {
+        padding: 100px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.045);
+    }
+    .section-label {
+        color: var(--green);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    h2 {
+        font-size: clamp(30px, 4vw, 46px);
+        letter-spacing: -1.5px;
+        margin-bottom: 18px;
+    }
+    .section-intro {
+        max-width: 760px;
+        color: var(--muted);
+        margin-bottom: 45px;
+    }
+    /* ABOUT */
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 50px;
+    }
+    .about-text {
+        color: #b4c0cc;
+        font-size: 17px;
+    }
+    .stats {
+        display: grid;
+        gap: 14px;
+    }
+    .stat {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 22px;
+    }
+    .stat strong {
+        display: block;
+        color: var(--green);
+        font-size: 29px;
+        margin-bottom: 3px;
+    }
+
+    .stat span {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    /* EXPERIENCE */
+
+    .timeline {
+        display: grid;
+        gap: 18px;
+    }
+
+    .experience {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 28px;
+    }
+
+    .experience-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 16px;
+    }
+
+    .experience h3 {
+        font-size: 21px;
+    }
+
+    .role {
+        color: var(--green);
+        font-weight: 600;
+        font-size: 14px;
+        margin-top: 4px;
+    }
+
+    .date {
+        color: var(--muted);
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    .experience p {
+        color: var(--muted);
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .skill-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 25px;
+    }
+
+    .skill-card h3 {
+        margin-bottom: 12px;
+        font-size: 18px;
+    }
+
+    .skill-card p {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+    }
+
+    .tag {
+        background: #1b2632;
+        border: 1px solid #293746;
+        color: #c7d2de;
+        border-radius: 6px;
+        padding: 5px 9px;
+        font-size: 12px;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .project {
+        position: relative;
+        background: linear-gradient(
+            145deg,
+            #151e28,
+            #101720
+        );
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        padding: 28px;
+        transition:
+            transform 0.25s ease,
+            border-color 0.25s ease;
+    }
+
+    .project:hover {
+        transform: translateY(-5px);
+        border-color: rgba(66, 211, 146, 0.45);
+    }
+
+    .project-number {
+        color: var(--green);
+        font-family: monospace;
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+
+    .project h3 {
+        font-size: 23px;
+        margin-bottom: 8px;
+    }
+
+    .project-stack {
+        color: var(--purple);
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .project p {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    /* EXPERTISE */
+
+    .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+    }
+
+    .expertise {
+        padding: 22px;
+        border: 1px solid var(--border);
+        background: var(--bg-soft);
+        border-radius: 12px;
+    }
+
+    .expertise strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .expertise span {
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+        text-align: center;
+        padding-bottom: 120px;
+    }
+
+    .contact .section-intro {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* FOOTER */
+
+    footer {
+        border-top: 1px solid var(--border);
+        padding: 28px 0;
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+        .hero-grid,
+        .about-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .skills-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .expertise-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero {
+            padding: 75px 0;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .nav-links {
+            display: none;
+        }
+
+        h1 {
+            letter-spacing: -2px;
+        }
+
+        .hero-description {
+            font-size: 16px;
+        }
+
+        .skills-grid,
+        .projects-grid,
+        .expertise-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .experience-header {
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .footer-inner {
+            flex-direction: column;
+        }
+
+        section {
+            padding: 75px 0;
+        }
+    }
+</style>
+
+</head> <body> <!-- NAVIGATION --> <nav> <div class="container nav-inner">
+    <a href="#" class="logo">
+        Aman<span>.</span>
+    </a>
+
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</div>
+
+</nav> <!-- HERO --> <header class="hero"> <div class="container hero-grid">
+    <div>
+
+        <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Available for opportunities
+        </div>
+
+        <h1>
+            Hi, I'm <span>Aman</span>.
+        </h1>
+
+        <div class="hero-title">
+            Senior PHP / Laravel Backend Developer
+        </div>
+
+        <p class="hero-description">
+            8+ years of experience building backend systems,
+            REST APIs, SaaS platforms, LMS applications,
+            business automation tools and scalable web applications.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn btn-primary">
+                Explore My Work
+            </a>
+
+            <a
+                href="https://github.com/heyamandhone"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+            >
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="terminal">
+
+        <div class="terminal-top">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+        </div>
+
+        <div class="terminal-code">
+
+            <div>
+                <span class="keyword">const</span>
+                developer = {
+            </div>
+
+            <div>
+                &nbsp;&nbsp;
+                <span class="property">name</span>:
+                <span class="string">"Aman Dhonne"</span>,
+            </div>
+
+            <div>
+                &nbsp;&nbsp;
+                <span class="property">experience</span>:
+                <span class="string">"8+ years"</span>,
+            </div>
+
+            <div>
+                &nbsp;&nbsp;
+                <span class="property">backend</span>:
+                <span class="string">"PHP / Laravel"</span>,
+            </div>
+
+            <div>
+                &nbsp;&nbsp;
+                <span class="property">database</span>:
+                <span class="string">"MySQL / Redis"</span>,
+            </div>
+
+            <div>
+                &nbsp;&nbsp;
+                <span class="property">frontend</span>:
+                <span class="string">"Vue / Inertia"</span>,
+            </div>
+
+            <div>
+                &nbsp;&nbsp;
+                <span class="property">focus</span>:
+                <span class="string">"Scalable Systems"</span>
+            </div>
+
+            <div>
+                };
+            </div>
+
+            <br>
+
+            <div class="comment">
+                // Build. Improve. Scale.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</header> <!-- ABOUT --> <section id="about">
+<div class="container">
+
+    <div class="section-label">
+        About Me
+    </div>
+
+    <h2>
+        Backend engineering with real-world ownership.
+    </h2>
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <p>
+                I'm a Senior PHP / Laravel Developer with more than
+                8 years of professional experience building and
+                maintaining web applications and backend systems.
+            </p>
+
+            <br>
+
+            <p>
+                My experience includes REST APIs, SaaS platforms,
+                LMS applications, ERP-style systems, multi-tenant
+                applications, mobile application backends,
+                third-party integrations and business automation.
+            </p>
+
+            <br>
+
+            <p>
+                I've worked both independently and as part of
+                development teams, and have taken ownership of
+                projects from development through delivery.
+            </p>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>8+</strong>
+                <span>Years of professional experience</span>
+            </div>
+
+            <div class="stat">
+                <strong>PHP</strong>
+                <span>Primary backend ecosystem</span>
+            </div>
+
+            <div class="stat">
+                <strong>Laravel</strong>
+                <span>Primary framework</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section> <!-- EXPERIENCE --> <section id="experience">
+<div class="container">
+
+    <div class="section-label">
+        Experience
+    </div>
+
+    <h2>
+        Professional Journey
+    </h2>
+
+    <p class="section-intro">
+        Experience across product development, client projects,
+        backend engineering, APIs and business applications.
+    </p>
+
+    <div class="timeline">
+
+        <article class="experience">
+
+            <div class="experience-header">
+
+                <div>
+                    <h3>RisingLMS</h3>
+
+                    <div class="role">
+                        Senior PHP / Laravel Developer
+                    </div>
+                </div>
+
+                <div class="date">
+                    Jun 2024 — Present
+                </div>
+
+            </div>
+
+            <p>
+                Working on backend systems and product development
+                using PHP, Laravel and modern web technologies,
+                with focus on maintainable application architecture,
+                APIs and business workflows.
+            </p>
+
+        </article>
+
+        <article class="experience">
+
+            <div class="experience-header">
+
+                <div>
+                    <h3>Tech Prastish Private Ltd</h3>
+
+                    <div class="role">
+                        Developer / Mentor
+                    </div>
+                </div>
+
+                <div class="date">
+                    Feb 2018 — Jun 2024
+                </div>
+
+            </div>
+
+            <p>
+                Worked across multiple client and company products,
+                developing Laravel and PHP applications, APIs,
+                admin panels, SaaS products, LMS systems,
+                Shopify solutions and third-party integrations.
+                Also supported and mentored developers as part of
+                the development team.
+            </p>
+
+        </article>
+
+    </div>
+
+</div>
+
+</section> <!-- SKILLS --> <section id="skills">
+<div class="container">
+
+    <div class="section-label">
+        Technology
+    </div>
+
+    <h2>
+        Tools I Work With
+    </h2>
+
+    <p class="section-intro">
+        A practical technology stack built through real-world
+        project experience.
+    </p>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+
+            <h3>Backend</h3>
+
+            <p>
+                Backend development, APIs and business logic.
+            </p>
+
+            <div class="tags">
+                <span class="tag">PHP</span>
+                <span class="tag">Laravel</span>
+                <span class="tag">CakePHP</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">OOP</span>
+            </div>
+
+        </div>
+
+        <div class="skill-card">
+
+            <h3>Database & Caching</h3>
+
+            <p>
+                Data modeling, queries, relationships and
+                application caching.
+            </p>
+
+            <div class="tags">
+                <span class="tag">MySQL</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Redis</span>
+                <span class="tag">Eloquent</span>
+            </div>
+
+        </div>
+
+        <div class="skill-card">
+
+            <h3>Frontend</h3>
+
+            <p>
+                Modern frontend integration with Laravel applications.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Vue.js</span>
+                <span class="tag">Inertia.js</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">jQuery</span>
+                <span class="tag">Blade</span>
+            </div>
+
+        </div>
+
+        <div class="skill-card">
+
+            <h3>Infrastructure</h3>
+
+            <p>
+                Application deployment and development environments.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Docker</span>
+                <span class="tag">AWS</span>
+                <span class="tag">Linux</span>
+                <span class="tag">Git</span>
+            </div>
+
+        </div>
+
+        <div class="skill-card">
+
+            <h3>Integrations</h3>
+
+            <p>
+                Connecting applications with external platforms
+                and services.
+            </p>
+
+            <div class="tags">
+                <span class="tag">Google APIs</span>
+                <span class="tag">Shopify</span>
+                <span class="tag">Webhooks</span>
+                <span class="tag">AI APIs</span>
+            </div>
+
+        </div>
+
+        <div class="skill-card">
+
+            <h3>Application Architecture</h3>
+
+            <p>
+                Designing maintainable backend workflows and
+                scalable application components.
+            </p>
+
+            <div class="tags">
+                <span class="tag">SaaS</span>
+                <span class="tag">Multi-Tenant</span>
+                <span class="tag">Queues</span>
+                <span class="tag">Caching</span>
+                <span class="tag">RBAC</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section> <!-- PROJECTS --> <section id="projects">
+<div class="container">
+
+    <div class="section-label">
+        Selected Work
+    </div>
+
+    <h2>
+        Featured Projects
+    </h2>
+
+    <p class="section-intro">
+        A selection of projects that represent different aspects
+        of my backend and product development experience.
+    </p>
+
+    <div class="projects-grid">
+
+        <article class="project">
+
+            <div class="project-number">
+                01 / PRODUCT
+            </div>
+
+            <h3>Uproster</h3>
+
+            <div class="project-stack">
+                Laravel · Inertia · Vue · Chrome Extension · AI
+            </div>
+
+            <p>
+                A business platform connected with a custom Chrome
+                Extension for Upwork job and profile workflows,
+                AI-assisted proposal generation and profile
+                matching. Included AI API and Pinecone integration.
+            </p>
+
+        </article>
+
+        <article class="project">
+
+            <div class="project-number">
+                02 / LMS
+            </div>
+
+            <h3>SelfMatch</h3>
+
+            <div class="project-stack">
+                Laravel · Inertia · Vue
+            </div>
+
+            <p>
+                An LMS platform with organizations, roles,
+                permissions, subscriptions, parent/student
+                workflows and complex recurring form scheduling.
+            </p>
+
+        </article>
+
+        <article class="project">
+
+            <div class="project-number">
+                03 / MOBILE BACKEND
+            </div>
+
+            <h3>Reclam</h3>
+
+            <div class="project-stack">
+                Laravel · Inertia · Vue · REST APIs
+            </div>
+
+            <p>
+                Recycling and waste collection platform connecting
+                customers, drivers and an organization through
+                request, pickup and confirmation workflows.
+            </p>
+
+        </article>
+
+        <article class="project">
+
+            <div class="project-number">
+                04 / SOCIAL & CONTEST
+            </div>
+
+            <h3>Musicash</h3>
+
+            <div class="project-stack">
+                Laravel · Blade · APIs · Mobile Apps
+            </div>
+
+            <p>
+                Social video and contest platform with web,
+                mobile application APIs, voting functionality,
+                user-generated content and a large administrative
+                panel.
+            </p>
+
+        </article>
+
+        <article class="project">
+
+            <div class="project-number">
+                05 / SPORTS
+            </div>
+
+            <h3>Friendly Match</h3>
+
+            <div class="project-stack">
+                Laravel · Blade · APIs · Google APIs
+            </div>
+
+            <p>
+                Football team matching platform using age,
+                gender and location-based matching with
+                Google API integration.
+            </p>
+
+        </article>
+
+        <article class="project">
+
+            <div class="project-number">
+                06 / MULTI-TENANT
+            </div>
+
+            <h3>Boost-Gym</h3>
+
+            <div class="project-stack">
+                CakePHP · Multi-Tenant · Roles
+            </div>
+
+            <p>
+                Multi-tenant gym management application with
+                super admin, gym administration, customer
+                workflows and multiple roles.
+            </p>
+
+        </article>
+
+    </div>
+
+</div>
+
+</section> <!-- EXPERTISE --> <section>
+<div class="container">
+
+    <div class="section-label">
+        Engineering Focus
+    </div>
+
+    <h2>
+        What I Enjoy Building
+    </h2>
+
+    <p class="section-intro">
+        Areas where backend engineering and product requirements
+        come together.
+    </p>
+
+    <div class="expertise-grid">
+
+        <div class="expertise">
+            <strong>REST APIs</strong>
+            <span>Web and mobile backends</span>
+        </div>
+
+        <div class="expertise">
+            <strong>SaaS</strong>
+            <span>Business and subscription platforms</span>
+        </div>
+
+        <div class="expertise">
+            <strong>Architecture</strong>
+            <span>Maintainable backend systems</span>
+        </div>
+
+        <div class="expertise">
+            <strong>Performance</strong>
+            <span>Queries, caching and optimization</span>
+        </div>
+
+        <div class="expertise">
+            <strong>Security</strong>
+            <span>Authentication and authorization</span>
+        </div>
+
+        <div class="expertise">
+            <strong>Queues</strong>
+            <span>Background processing</span>
+        </div>
+
+        <div class="expertise">
+            <strong>Integrations</strong>
+            <span>Third-party platforms and APIs</span>
+        </div>
+
+        <div class="expertise">
+            <strong>AI Integration</strong>
+            <span>AI APIs and vector databases</span>
+        </div>
+
+    </div>
+
+</div>
+
+</section> <!-- CONTACT --> <section id="contact" class="contact">
+<div class="container">
+
+    <div class="section-label">
+        Contact
+    </div>
+
+    <h2>
+        Let's build something useful.
+    </h2>
+
+    <p class="section-intro">
+        Interested in backend engineering, Laravel development,
+        SaaS products, APIs or technical collaboration?
+        Feel free to connect.
+    </p>
+
+    <div class="buttons" style="justify-content:center;">
+
+        <a
+            href="https://github.com/heyamandhone"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+        >
+            GitHub
+        </a>
+
+        <a
+            href="mailto:YOUR_EMAIL_HERE"
+            class="btn btn-secondary"
+        >
+            Email Me
+        </a>
+
+    </div>
+
+</div>
+
+</section> <!-- FOOTER --> <footer>
+<div class="container footer-inner">
+
+    <div>
+        © <span id="year"></span> Aman Dhonne
+    </div>
+
+    <div>
+        Senior PHP / Laravel Developer
+    </div>
+
+</div>
+  </footer> <script> document.getElementById("year").textContent = new Date().getFullYear(); </script> </body> </html>
+
 
